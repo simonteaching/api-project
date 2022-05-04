@@ -1,6 +1,7 @@
 {
   "name": "api-project",
   "scripts": {
+    "format": "prettier --write .",
     "test": "jest"
   },
   "engines": {
@@ -15,6 +16,7 @@
   },
   "homepage": "https://github.com/simonteaching/api-project#readme",
   "devDependencies": {
-    "jest": "^28.0.3"
+    "jest": "^28.0.3",
+    "prettier": "2.6.2"
   }
 }
