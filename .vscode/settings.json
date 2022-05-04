@@ -6,7 +6,7 @@
     "editor.fontSize": 14,
     "editor.lineHeight": 22,
     "window.zoomLevel": 4,
-    // "editor.formatOnSave": false,
+    "editor.formatOnSave": false,
     "editor.lineNumbers": "on",
     "editor.quickSuggestionsDelay": 1500,
     "editor.hover.enabled": true,
