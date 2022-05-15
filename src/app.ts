@@ -20,6 +20,21 @@ app.get("/planets", async (request, response) => {
     response.json(planets);
 });
 
+app.get("/planets/:id(\\d+)", async (request, response, next) => {
+    const planetId = Number(request.params.id);
+
+    const planet = await prisma.planet.findUnique({
+        where: { id: planetId }
+    });
+
+    if (!planet) {
+        response.status(404);
+        return next(`Cannot GET /planets/${planetId}`);
+    }
+
+    response.json(planet);
+});
+
 app.post("/planets", validate({ body: planetSchema }), async (request, response) => {
     const planetData: PlanetData = request.body;
 
