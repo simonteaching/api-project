@@ -24,6 +24,7 @@
   "homepage": "https://github.com/simonteaching/api-project#readme",
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.5.1",
     "@types/node": "^17.0.31",
@@ -47,6 +48,7 @@
     "@prisma/client": "^3.14.0",
     "@sinclair/typebox": "^0.23.5",
     "ajv-formats": "^2.1.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
