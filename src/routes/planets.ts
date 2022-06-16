@@ -39,9 +39,14 @@ router.get("/:id(\\d+)", async (request, response, next) => {
 
 router.post("/", checkAuthorization, validate({ body: planetSchema }), async (request, response) => {
     const planetData: PlanetData = request.body;
+    const username = request.user?.username as string;
 
     const planet = await prisma.planet.create({
-        data: planetData
+        data: {
+            ...planetData,
+            createdBy: username,
+            updatedBy: username,
+        }
     });
 
     response.status(201).json(planet);
@@ -50,11 +55,15 @@ router.post("/", checkAuthorization, validate({ body: planetSchema }), async (re
 router.put("/:id(\\d+)", checkAuthorization, validate({ body: planetSchema }), async (request, response, next) => {
     const planetId = Number(request.params.id);
     const planetData: PlanetData = request.body;
+    const username = request.user?.username as string;
 
     try {
         const planet = await prisma.planet.update({
             where: { id: planetId },
-            data: planetData
+            data: {
+                ...planetData,
+                updatedBy: username,
+            }
         });
 
         response.status(200).json(planet);
