@@ -1,3 +1,19 @@
 # api-project
 
-Node.js API project
+## Install
+
+```
+npm install
+```
+
+## Develop
+
+```
+npm run dev
+```
+
+## Test
+
+```
+npm test
+```
